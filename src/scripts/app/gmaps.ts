@@ -39,7 +39,7 @@ export class GMaps {
         (<HTMLInputElement>document.getElementById("latlng")).placeholder = "'" + config.latitude + "," + config.longitude + "'";
 
         this.gmap.controls[google.maps.ControlPosition.TOP_LEFT].push(document.getElementById('custom-map-controls'));
-        this.gmap.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(document.getElementById('script-options'));
+        /** this.gmap.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(document.getElementById('script-options')); */
 
         let autocomplete = new google.maps.places.Autocomplete(input);
         autocomplete.bindTo('bounds', this.gmap);
