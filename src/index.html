@@ -272,7 +272,7 @@
     var app = new App.App()
 
     var targetNode = $("#hive-count");
-    var config = { childList: true, subtree:true, characterData:true };
+    var config = { childList: true, subtree:true };
 
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
