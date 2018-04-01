@@ -271,8 +271,8 @@
 <script>
     var app = new App.App()
 
-    var targetNode = $("#hive-count").get(0);
-    var config = { childList: true, subtree:true };
+    var targetNode = $("#hive-count");
+    var config = { childList: true, subtree:true, attributes:true, characterData:true };
 
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
@@ -285,24 +285,12 @@
             $("#wph-count").html(wph);
             $("#tw-count").html(tw);
             $("#workers").val(wph).change();
+
+            console.log(mutation.type);
         });
     });
 
     observer.observe(targetNode, config);
-
-// DOMSubtreeModified Mutation Events deprecated
-/*    $("#hive-count").on("DOMSubtreeModified", function() {
-        hc = parseInt($(this).text());
-        sc = parseInt($(".slider-handle").attr("aria-valuenow"));
-        cph = (((sc * (sc - 1)) * 3) + 1);
-        wph = Math.ceil(cph / 20);
-        tw = (wph * hc);
-        $("#cph-count").html(cph);
-        $("#wph-count").html(wph);
-        $("#tw-count").html(tw);
-        $("#workers").val(wph).change();
-    });
-*/
 </script>
 </body>
 
