@@ -73,7 +73,8 @@ export class Map {
 
     if (this.activeBeehive !== null) {
       this.activeBeehive.resize(this.steps);
-    }
+      $('#script-options').hide();
+   }
   }
   private removeActiveHive(): void {
     if (this.activeBeehive !== null) {
